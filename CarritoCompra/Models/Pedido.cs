@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
-using BCrypt.Net;
 
 namespace CarritoCompra.Models
 {
@@ -17,8 +14,10 @@ namespace CarritoCompra.Models
         public int id_producto { get; set; }
         public Producto Producto { get; set; }
 
+        [DisplayName("Cantidad")]
         public int cantidad { get; set; }
 
+        [DisplayName("Fecha")]
         public DateTime fecha_pedido { get; set; }
     }
 }

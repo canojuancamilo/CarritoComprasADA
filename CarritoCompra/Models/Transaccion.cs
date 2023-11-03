@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,7 +15,11 @@ namespace CarritoCompra.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_transaccion { get; set; }
         public int id_usuario { get; set; }
+
+        [DisplayName("Usuario")]
         public Usuario Usuario { get; set; }
+
+        [DisplayName("Fecha")]
         public DateTime fecha_transaccion { get; set; }
     }
 }

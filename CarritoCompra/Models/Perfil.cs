@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace CarritoCompra.Models
 {
@@ -12,6 +9,8 @@ namespace CarritoCompra.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_perfil { get; set; }
+
+        [DisplayName("Rol")]
         public string rol { get; set; }
     }
 }

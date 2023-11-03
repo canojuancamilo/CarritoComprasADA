@@ -151,6 +151,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BDContextApplication.cs" />
+    <Compile Include="Models\Transaccion.cs" />
+    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\CategoriaProducto.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Usuario.cs" />

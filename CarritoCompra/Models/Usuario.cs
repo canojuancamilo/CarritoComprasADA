@@ -15,7 +15,7 @@ namespace CarritoCompra.Models
         public int id_usuario { get; set; }
 
         [Required(ErrorMessage = "El campo es requerido.")]
-        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
+        [StringLength(150, ErrorMessage = "No puede tener más de 150 caracteres.")]
         public string nombre { get; set; }
 
         [Required(ErrorMessage = "El campo es requerido.")]

@@ -97,3 +97,8 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\Carrit
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.CopyComplete
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.pdb
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\BCrypt.Net.dll
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\BCrypt.Net.xml
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.GenerateResource.cache
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels1.resources

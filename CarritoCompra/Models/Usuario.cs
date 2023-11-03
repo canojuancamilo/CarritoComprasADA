@@ -14,19 +14,29 @@ namespace CarritoCompra.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_usuario { get; set; }
 
-        [StringLength(100, ErrorMessage = "no puede tener más de 100 caracteres.")]
+        [Required(ErrorMessage = "El campo es requerido.")]
+        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
+        public string nombre { get; set; }
+
+        [Required(ErrorMessage = "El campo es requerido.")]
+        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
+        public string identificacion { get; set; }
+
+        [Required(ErrorMessage = "El campo es requerido.")]
+        [StringLength(100, ErrorMessage = "No puede tener más de 100 caracteres.")]
         public string direccion { get; set; }
 
-        [StringLength(20, ErrorMessage = "no puede tener más de 20 caracteres.")]
+        [Required(ErrorMessage = "El campo es requerido.")]
+        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
         public string telefono { get; set; }
 
-        [StringLength(20, ErrorMessage = "no puede tener más de 20 caracteres.")]
+        [Required(ErrorMessage = "El campo es requerido.")]
+        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
         public string usuario { get; set; }
 
-        [StringLength(20, ErrorMessage = "no puede tener más de 20 caracteres.")]
+        [Required(ErrorMessage = "El campo es requerido.")]
+        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
         public string contrasena { get; set; }
-
-        public string identificacion { get; set; }
 
         public int id_perfil { get; set; }
 

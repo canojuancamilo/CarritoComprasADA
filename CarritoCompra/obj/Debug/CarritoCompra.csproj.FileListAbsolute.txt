@@ -51,6 +51,7 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\roslyn\vbc.r
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\roslyn\VBCSCompiler.exe
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\Antlr3.Runtime.dll
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\BCrypt.Net.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\EntityFramework.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\EntityFramework.SqlServer.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -67,6 +68,7 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\System.Web.W
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\System.Web.WebPages.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\System.Web.WebPages.Razor.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\WebGrease.dll
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\BCrypt.Net.xml
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\EntityFramework.xml
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\EntityFramework.SqlServer.xml
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\System.Web.Helpers.xml
@@ -93,12 +95,10 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\es\System.Ne
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\es\System.Web.Http.resources.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\es\System.Web.Http.WebHost.resources.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.AssemblyReference.cache
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels1.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.GenerateResource.cache
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.CoreCompileInputs.cache
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.CopyComplete
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.pdb
-C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\BCrypt.Net.dll
-C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\BCrypt.Net.xml
-C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels.resources
-C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.GenerateResource.cache
-C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels1.resources

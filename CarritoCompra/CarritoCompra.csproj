@@ -152,6 +152,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BDContextApplication.cs" />
     <Compile Include="Models\CategoriaProducto.cs" />
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Perfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

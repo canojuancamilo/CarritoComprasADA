@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace CarritoCompra.Controllers
 {
-    public class HomeController : Controller
+    public class ClienteController : Controller
     {
         protected ServicioUsuario servicioUsuario = new ServicioUsuario();
 

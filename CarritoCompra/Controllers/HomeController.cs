@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarritoCompra.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,35 @@ namespace CarritoCompra.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new Usuario() { });
+        }
+
+        [Route("ValidarUsuario"), HttpPost]
+        public ActionResult ValidarUsuario(Usuario model)
+        {
+            if (ModelState.IsValid)
+            {
+                return Json(new { }, JsonRequestBehavior.AllowGet);
+            }
+
+            return View("Index", model);
+        }
+
+        [Route("RegistrarUsuario"), AcceptVerbs(HttpVerbs.Get | HttpVerbs.Head)]
+        public ActionResult RegistrarUsuario()
+        {
+            return View(new Usuario() { });
+        }
+
+        [Route("ActualizarUsuario"), HttpPost]
+        public ActionResult ActualizarUsuario(Usuario Model)
+        {
+            if (ModelState.IsValid) 
+            {
+                return Json(new { }, JsonRequestBehavior.AllowGet);
+            }
+
+            return View("RegistrarUsuario", Model);
         }
 
         public ActionResult About()

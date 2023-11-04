@@ -32,5 +32,6 @@ namespace CarritoCompra.Models
         [Required(ErrorMessage = "El campo es requerido.")]
         [StringLength(200, ErrorMessage = "No puede tener más de 200 caracteres.")]
         public string Descripcion { get; set; }
+        public string url { get; set; }
     }
 }

@@ -12,12 +12,14 @@ using System.Web.Mvc;
 
 namespace CarritoCompra.Controllers
 {
+    [RoutePrefix("Cliente")]
     public class ClienteController : Controller
     {
         protected ServicioUsuario servicioUsuario = new ServicioUsuario();
-
+        
         [UsuarioCache]
-        public ActionResult Index()
+        [Route("Inicio")]
+        public ActionResult Inicio()
         {
             return View(new Usuario() { });
         }

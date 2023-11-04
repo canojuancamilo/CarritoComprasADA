@@ -17,7 +17,7 @@
         <img src="~/Img/login.jpg" style="object-fit: contain; margin-top: 40px;" />
     </div>
     <div class="col-of col-lg-4 col-md-4">
-        <div class="panel panel-info" style="margin-top: 140px;">
+        <div class="panel panel-primary" style="margin-top: 140px;">
             <div class="panel-heading text-center" style="font-weight:600;">Carrito de compras ada</div>
             <div class="panel-body">
                 <div class="form-group">
@@ -25,7 +25,8 @@
                     {
                         HttpMethod = "Post",
                         OnBegin = "$(this).find('#submit-btn').button('loading');",
-                        OnFailure = "onFailure"
+                        OnFailure = "onFailure",
+                        OnSuccess = "onSucces"
                     }))
                     {
                         <div class="form-group">

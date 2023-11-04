@@ -16,7 +16,7 @@ namespace CarritoCompra.Controllers
     {
         protected ServicioUsuario servicioUsuario = new ServicioUsuario();
 
-        [UsuarioCache]
+        [UsuarioPublicCache]
         public ActionResult Index()
         {
             return View(new Usuario() { });
@@ -45,19 +45,22 @@ namespace CarritoCompra.Controllers
                         // Guarda los datos en la caché con una duración de 5 minutos (300 segundos)
                         HttpContext.Cache.Insert("Usuario", usuario, null, DateTime.Now.AddSeconds(300), Cache.NoSlidingExpiration);
 
-                        return Json(new { }, JsonRequestBehavior.AllowGet);
+                        return Json(new { success = true, redirectTo = Url.Action("Inicio", "Cliente") });
                     }
 
                     ModelState.AddModelError("contrasena", "Contraseña incorrecta.");
                 }
-
-                ModelState.AddModelError("usuario", "No se encontro este usuario.");
+                else
+                {
+                    ModelState.AddModelError("usuario", "No se encontro este usuario.");
+                }
             }
 
             Response.StatusCode = 400;
             return View("Index", model);
         }
 
+        [UsuarioPublicCache]
         [Route("RegistrarUsuario"), AcceptVerbs(HttpVerbs.Get | HttpVerbs.Head)]
         public ActionResult RegistrarUsuario()
         {

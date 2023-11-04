@@ -18,11 +18,6 @@ namespace CarritoCompra.FiltrosPersonalizados
                 // Los datos no están en la caché, redirige al login
                 filterContext.Result = new RedirectResult("");
             }
-            else
-            {
-                // Los datos están en la caché, continúa con la autorización
-                base.OnAuthorization(filterContext);
-            }
         }
     }
 }

@@ -1,0 +1,55 @@
+﻿@model List<CarritoCompra.Models.Producto>
+
+
+<div class="row">
+    <div class="col-lg-3 col-md-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                Productos por Comprar
+            </div>
+            <div class="panel-body">
+                <div class="listaPedidos">
+                    <div class="panel panel-default no-results">
+                        <div class="panel-body">
+                            Sin productos agregados.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9">
+        <h2>
+            Productos
+        </h2>
+
+        <div class="ContenedorProductos">
+            @if (Model == null || Model.Count <= 0)
+            {
+                <div class="panel panel-default no-results">
+                    <div class="panel-body">
+                        Sin productos agregados.
+                    </div>
+                </div>
+            }
+            else
+            {
+
+                @foreach (var producto in Model)
+                {
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            @producto.nombre
+                        </div>
+                        <div class="panel-body">
+                            @producto.Descripcion
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

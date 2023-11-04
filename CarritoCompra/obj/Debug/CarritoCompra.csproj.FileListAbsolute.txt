@@ -96,9 +96,11 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\es\System.We
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\bin\es\System.Web.Http.WebHost.resources.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels.resources
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.AddModels1.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel.resources
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.GenerateResource.cache
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.CoreCompileInputs.cache
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.CopyComplete
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.pdb
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.AssemblyReference.cache
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel1.resources

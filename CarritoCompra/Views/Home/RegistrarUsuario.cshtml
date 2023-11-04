@@ -4,20 +4,21 @@
     ViewBag.Title = "Login";
 }
 
-<div class="row" style=" margin-right: 0px; margin-left: 0px; ">
-    <div class="col-lg-offset-4 col-lg-4 col-md-4">
-        <div class="panel panel-info" style="margin-top: 0px;">
-            <div class="panel-heading text-center" style="font-weight:600;">Registrar usuario</div>
-            <div class="panel-body">
-                <div class="form-group">
-                    @using (Ajax.BeginForm("ActualizarUsuario", new AjaxOptions
-                    {
-                        HttpMethod = "Post",
-                        OnFailure = "",
-                        OnBegin = "$(this).find('#submit-btn').button('loading');",
-                        OnSuccess = ""
-                    }))
-                    {
+@using (Ajax.BeginForm("ActualizarUsuario", null, new AjaxOptions
+    {
+        HttpMethod = "POST",
+        OnBegin = "$(this).find('#submit-btn').button('loading');",
+        OnSuccess = "onSucces",
+        OnFailure = "onFailure"
+}, null))
+{
+
+    <div class="row" style=" margin-top:30px; margin-right: 0px; margin-left: 0px; ">
+        <div class="col-lg-offset-4 col-lg-4 col-md-4">
+            <div class="panel panel-info" style="margin-top: 0px;">
+                <div class="panel-heading text-center" style="font-weight:600;">Registrar usuario</div>
+                <div class="panel-body">
+                    <div class="form-group">
                         <div class="form-group">
                             @Html.LabelFor(m => m.nombre, new { @class = "control-label" })
                             @Html.TextBoxFor(m => m.nombre, new { @class = "form-control" })
@@ -49,41 +50,24 @@
                             @Html.ValidationMessageFor(m => m.contrasena, null, new { @class = "help-block", @style = "color: #a94442;" })
                         </div>
                         <div class="text-center">
-                            <input id="submit-btn" type="submit" class="btn btn-primary" data-loading-text="Validando..." style="margin: auto; width: 90%; border-radius: 25px; padding: 15px; background-color: #398BF7; font-weight: 600; font-size: 20px; margin-top:15px;" value="Registrar" />
+                            <input id="submit-btn" type="submit" class="btn btn-primary" data-loading-text="Cargando..." style="margin: auto; width: 90%; border-radius: 25px; padding: 15px; background-color: #398BF7; font-weight: 600; font-size: 20px; margin-top:15px;" value="Registrar" />
                         </div>
 
                         <p style="margin-top: 10px;" class="text-center"><a href="@Url.Action("Index")" style="font-weight: 600; color: #5D95E0; text-decoration-line: underline; ">Iniciar sesión </a></p>
-                    }
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
 
-@*<div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>*@
+@section scripts{
+    <script>
+        var onSucces = function (data) {
+            if (data.success) {
+                window.location.href = data.redirectTo;
+            }
+        };
+    </script>
+} 

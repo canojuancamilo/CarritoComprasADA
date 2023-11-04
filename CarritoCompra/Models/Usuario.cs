@@ -42,22 +42,22 @@ namespace CarritoCompra.Models
 
         [DisplayName("Contraseña")]
         [Required(ErrorMessage = "El campo es requerido.")]
-        [StringLength(20, ErrorMessage = "No puede tener más de 20 caracteres.")]
+        [StringLength(int.MaxValue, ErrorMessage = "No puede tener más de 20 caracteres.")]
         public string contrasena { get; set; }
 
         public int id_perfil { get; set; }
 
         public Perfil Perfil { get; set; }
 
-        public string EncriptarContrasena(string contrasenaIngresada)
+        public string EncriptarContrasena()
         {
             var Salt = BCrypt.Net.BCrypt.GenerateSalt();
-            return BCrypt.Net.BCrypt.HashPassword(contrasenaIngresada, Salt);
+            return BCrypt.Net.BCrypt.HashPassword(contrasena, Salt);
         }
 
-        public bool VerificarContrasena(string contrasenaIngresada)
+        public bool VerificarContrasena(string contrasenaGuardada)
         {
-            return BCrypt.Net.BCrypt.Verify(contrasenaIngresada, contrasena);
+            return BCrypt.Net.BCrypt.Verify(contrasena, contrasenaGuardada);
         }
     }
 }

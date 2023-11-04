@@ -42,8 +42,8 @@ namespace CarritoCompra.Controllers
                     {
                         SP_Registrar_Usuario datosEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
 
-                        // Guarda los datos en la caché con una duración de 5 minutos (300 segundos)
-                        HttpContext.Cache.Insert("Usuario", usuario, null, DateTime.Now.AddSeconds(300), Cache.NoSlidingExpiration);
+                        // Guarda los datos en la caché con una duración de 15 minutos (900 segundos)
+                        HttpContext.Cache.Insert("Usuario", usuario, null, DateTime.Now.AddSeconds(900), Cache.NoSlidingExpiration);
 
                         return Json(new { success = true, redirectTo = Url.Action("Inicio", "Cliente") });
                     }

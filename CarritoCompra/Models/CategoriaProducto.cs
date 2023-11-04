@@ -7,7 +7,7 @@ namespace CarritoCompra.Models
     public class CategoriaProducto
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id_categoria { get; set; }
 
         [DisplayName("Nombre")]

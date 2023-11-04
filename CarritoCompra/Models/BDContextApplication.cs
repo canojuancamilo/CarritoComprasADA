@@ -26,7 +26,8 @@ namespace CarritoCompra.Models
 
             modelBuilder.Entity<CategoriaProducto>();
             modelBuilder.Entity<Pedido>();
-            modelBuilder.Entity<Perfil>();
+            modelBuilder.Entity<Perfil>().Property(m=> m.id_perfil)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             modelBuilder.Entity<Producto>();
             modelBuilder.Entity<Transaccion>();
             modelBuilder.Entity<Usuario>();

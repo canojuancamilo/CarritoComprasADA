@@ -104,3 +104,6 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\Carrit
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.pdb
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.csproj.AssemblyReference.cache
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel1.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel2.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel3.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel4.resources

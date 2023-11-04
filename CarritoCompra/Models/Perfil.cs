@@ -7,7 +7,6 @@ namespace CarritoCompra.Models
     public class Perfil
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_perfil { get; set; }
 
         [DisplayName("Rol")]

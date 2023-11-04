@@ -16,7 +16,7 @@ namespace CarritoCompra.FiltrosPersonalizados
             if (usuarioEnCache == null)
             {
                 // Los datos no están en la caché, redirige al login
-                filterContext.Result = new RedirectResult("");
+                filterContext.Result = new RedirectResult("~/Home/Index");
             }
         }
     }

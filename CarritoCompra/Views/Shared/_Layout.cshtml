@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div style="padding:0px 30px;">
+    <div class="ContenedorLayout" style="padding:0px 30px; margin-top:80px;">
         @RenderBody()
     </div>
 
@@ -41,6 +41,39 @@
         {
             $("body").html(xhr.responseText || xhr);
         }
+
+        $(".ContenedorLayout").on("click", ".restar", function () {
+            let cantidadElement = $(this).siblings(".cantidad");
+            let cantidad = parseInt(cantidadElement.text());
+
+            if (cantidad > 1) {
+                cantidadElement.text(cantidad - 1);
+            }
+        });
+
+        $(".ContenedorLayout").on("click", ".sumar", function () {
+            let cantidadMaxima = $(this).data("cantidad-maxima");
+            let cantidadElement = $(this).siblings(".cantidad");
+            let cantidad = parseInt(cantidadElement.text());
+
+            if (cantidad < cantidadMaxima) {
+                cantidadElement.text(cantidad + 1);
+            }
+        });
+
+        $(".ContenedorLayout").on("click", ".btnAgregarCarrito", function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            let $this = $(this);
+            $this.button('loading');
+
+            let id = $this.data("id");
+            let nombre = $this.data("nombre");
+            let cantidad = parseInt($this.siblings(".cantidad-container").find(".cantidad").text());
+            debugger;
+
+        });
     </script>
 </body>
 </html>

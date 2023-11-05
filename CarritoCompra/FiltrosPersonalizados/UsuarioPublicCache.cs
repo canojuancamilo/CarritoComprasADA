@@ -16,10 +16,14 @@ namespace CarritoCompra.FiltrosPersonalizados
 
             if (usuarioEnCache != null)
             {
-                if(usuarioEnCache.id_perfil == (int)Rol.Cliente) 
+                if (usuarioEnCache.id_perfil == (int)Rol.Cliente)
                 {
                     // Los datos no están en la caché, redirige al login
                     filterContext.Result = new RedirectResult("~/Cliente/Inicio");
+                }
+                else 
+                {
+                    filterContext.Result = new RedirectResult("~/Administrador/Inicio");
                 }
             }
         }

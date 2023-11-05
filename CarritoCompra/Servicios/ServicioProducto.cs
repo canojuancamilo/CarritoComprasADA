@@ -10,7 +10,6 @@ namespace CarritoCompra.Servicios
 {
     public class ServicioProducto
     {
-
         public List<SP_Retornar_Productos> ObtenerProductos()
         {
             using (var contexto = new BDContextApplication())
@@ -47,7 +46,6 @@ namespace CarritoCompra.Servicios
             }
         }
 
-        //retorna false si no tiene cantidad suficiente
         public int ValidarCantidadProducto(int id_producto)
         {
             using (var contexto = new BDContextApplication())
@@ -55,6 +53,27 @@ namespace CarritoCompra.Servicios
                 var resultado = contexto.Database.SqlQuery<int>("SP_Validar_cantidad_producto @id_producto",
                     new SqlParameter("id_producto", id_producto)
                 ).FirstOrDefault();
+
+                return resultado;
+            }
+        }
+
+        public List<SP_Retornar_Transacciones> ObtenerTransacciones()
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<SP_Retornar_Transacciones>("SP_Retornar_Transacciones").ToList();
+
+                return resultado;
+            }
+        }
+
+        public List<SP_Retornar_Pedidos> ObtenerPedidos(int id_transaccion)
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<SP_Retornar_Pedidos>("SP_Retornar_Pedidos @id_transaccion",
+                    new SqlParameter("id_transaccion", id_transaccion)).ToList();
 
                 return resultado;
             }

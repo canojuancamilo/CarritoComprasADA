@@ -188,6 +188,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BDContextApplication.cs" />
     <Compile Include="Models\Enums\Rol.cs" />
+    <Compile Include="Models\Procedure\SP_Retornar_Pedidos.cs" />
+    <Compile Include="Models\Procedure\SP_Retornar_Transacciones.cs" />
     <Compile Include="Models\Procedure\SP_Retornar_Productos.cs" />
     <Compile Include="Models\Procedure\SP_Registrar_Usuario.cs" />
     <Compile Include="Models\Transaccion.cs" />
@@ -250,6 +252,7 @@
     <Content Include="Views\Cliente\_ListaProductos.cshtml" />
     <Content Include="Views\Administrador\_ListaTransacciones.cshtml" />
     <Content Include="Views\Administrador\Inicio.cshtml" />
+    <Content Include="Views\Administrador\_ListaPedidos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

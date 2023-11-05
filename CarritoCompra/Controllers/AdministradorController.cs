@@ -21,19 +21,25 @@ namespace CarritoCompra.Controllers
         [Route("Inicio")]
         public ActionResult Inicio()
         {
-            return View(new Usuario() { });
+            return View();
         }
 
         [UsuarioCache]
         [Route("ListaProductos")]
         public ActionResult ListaTransacciones()
         {
-            var productos = servicioProducto.ObtenerProductos();
-            SP_Registrar_Usuario usuarioEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
+            var transacciones = servicioProducto.ObtenerTransacciones();
 
-            ViewBag.IdUsuario = usuarioEnCache.id_usuario;
+            return PartialView("_ListaTransacciones", transacciones);
+        }
 
-            return PartialView("ListaTransacciones", productos);
+        [UsuarioCache]
+        [Route("ListaProductos")]
+        public ActionResult ListaPedidos(int transaccion)
+        {
+            var pedidos = servicioProducto.ObtenerPedidos(transaccion);
+
+            return PartialView("_ListaPedidos", pedidos);
         }
     }
 }

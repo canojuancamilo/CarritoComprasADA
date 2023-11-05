@@ -1,0 +1,116 @@
+﻿@model List<CarritoCompra.Models.Procedure.SP_Retornar_Productos>
+@{
+    int idUsuario = (int)ViewBag.IdUsuario;
+
+    string mensaje = (string)TempData["MensajeLista"];
+}
+
+@if (!string.IsNullOrEmpty(mensaje))
+{
+    <div id="success-alert" class="alert alert-success alert-dismissible" style=" margin-top: 10px;">
+        @mensaje <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+}
+
+<input type="hidden" class="idUsuario" value="@idUsuario" />
+
+<div class="row">
+    <div class="col-lg-3 col-md-3">
+        <div class="panel panel-danger">
+            <div class="panel-heading text-center" style="background-color: #a94442; color:white;">
+                Productos por Comprar
+            </div>
+            <div class="panel-body">
+                <div class="listaPedidos">
+                    <div class="panel panel-default sinResultados">
+                        <div class="panel-body">
+                            Sin productos agregados.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-bottom:10px; margin-top:5px;">
+                    <button class="btn btn-danger guardarTransaccion" style="display:none;" data-loading-text="Guardando..."> Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9">
+
+        <div class="ContenedorProductos">
+            @if (Model == null || Model.Count <= 0)
+            {
+                <div class="panel panel-default no-results">
+                    <div class="panel-body">
+                        Sin productos agregados.
+                    </div>
+                </div>
+            }
+            else
+            {
+                foreach (var producto in Model)
+                {
+                    <div class="panel panel-info tarjeta">
+                        <div class="panel-heading text-center">
+                            <b>@producto.nombre</b>
+                        </div>
+                        <div class="panel-body" style="max-height:400px; min-height:350px;">
+                            <div class="categoria">
+                                @producto.nombre_categoria
+                            </div>
+                            <div class="imagen">
+                                <img src="@producto.url" />
+                            </div>
+                            <p class="text-right">
+                                <b style="color:cornflowerblue;">   Cantidad disponible: @producto.Cantidad_disponible</b>
+                            </p>
+                            <p>
+                                @producto.Descripcion
+                            </p>
+                        </div>
+                        <div class="panel-footer text-left">
+                            <div class="contenedor-footer">
+                                <div class="cantidad-container">
+                                    <span class="accion restar">
+                                        <i class="glyphicon glyphicon-minus"></i>
+                                    </span>
+                                    <span class="cantidad">1</span>
+                                    <span class="accion sumar" data-cantidad-maxima="@producto.Cantidad_disponible">
+                                        <i class="glyphicon glyphicon-plus" style="font-size: 16px;"></i>
+                                    </span>
+                                </div>
+                                <button class="btn-warning btn btnAgregarCarrito" style="margin-left:10px;" data-id="@producto.id_producto" data-nombre="@producto.nombre" data-loading-text="Agregando...">
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmacionModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="confirmacionModalLabel">Productos sin stock</h4>
+            </div>
+            <div class="modal-body">
+                <p>Estos productos no tiene el stock suficiente</p>
+                <div class="productosSinStock" style="margin-bottom:15px;">
+                    - <b>Play station 5:</b> cantidad disponible 5
+                    <br />
+                </div>
+                <p>
+                    ¿Desea continuar y comprar solo la cantidad disponible?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btnAceptarGuardar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

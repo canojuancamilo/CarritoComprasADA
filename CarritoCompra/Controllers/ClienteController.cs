@@ -24,6 +24,7 @@ namespace CarritoCompra.Controllers
             return View(new Usuario() { });
         }
 
+        [UsuarioCache]
         [Route("ListaProductos")]
         public ActionResult ListaProducto()
         {
@@ -35,7 +36,7 @@ namespace CarritoCompra.Controllers
             return PartialView("_ListaProductos", productos);
         }
 
-
+        [UsuarioCache]
         [HttpPost]
         [Route("ValidarCantidadProductos")]
         public ActionResult ValidarCantidadProductos(List<SP_Retornar_Productos> ListaProductos)
@@ -61,7 +62,7 @@ namespace CarritoCompra.Controllers
             return Json(new { productosSinStock = (listProductosSinStock.Count > 0), lista = listProductosSinStock });
         }
 
-
+        [UsuarioCache]
         [HttpPost]
         [Route("GuardarDatos")]
         public ActionResult ActualizarTransaccion(List<SP_Retornar_Productos> ListaProductos)

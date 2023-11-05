@@ -40,12 +40,13 @@ namespace CarritoCompra.Controllers
                 {
                     if (model.VerificarContrasena(usuario.contrasena))
                     {
-                        SP_Registrar_Usuario datosEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
-
                         // Guarda los datos en la caché con una duración de 15 minutos (900 segundos)
                         HttpContext.Cache.Insert("Usuario", usuario, null, DateTime.Now.AddSeconds(900), Cache.NoSlidingExpiration);
 
+                        if(usuario.id_perfil == (int)Rol.Cliente)
                         return Json(new { success = true, redirectTo = Url.Action("Inicio", "Cliente") });
+
+                        return Json(new { success = true, redirectTo = Url.Action("Inicio", "Administrador") });
                     }
 
                     ModelState.AddModelError("contrasena", "Contraseña incorrecta.");

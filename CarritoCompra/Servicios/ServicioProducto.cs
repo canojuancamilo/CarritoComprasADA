@@ -62,7 +62,8 @@ namespace CarritoCompra.Servicios
         {
             using (var contexto = new BDContextApplication())
             {
-                var resultado = contexto.Database.SqlQuery<SP_Retornar_Transacciones>("SP_Retornar_Transacciones").ToList();
+                var resultado = contexto.Database.SqlQuery<SP_Retornar_Transacciones>("SP_Retornar_Transacciones")
+                    .OrderByDescending(m=> m.fecha_transaccion) .ToList();
 
                 return resultado;
             }

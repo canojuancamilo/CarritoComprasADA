@@ -19,6 +19,45 @@ namespace CarritoCompra.Servicios
 
                 return resultado;
             }
-        }        
+        }
+
+        public int IngresarTransaccion(int id_usuario, DateTime fecha_transaccion)
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<int>("SP_Registrar_Transaccion @id_usuario, @fecha_transaccion",
+                    new SqlParameter("id_usuario", id_usuario),
+                    new SqlParameter("fecha_transaccion", fecha_transaccion)).FirstOrDefault();
+
+                return resultado;
+            }
+        }
+
+        public int IngresarPedido(int id_producto, int cantidad, DateTime fecha_pedido, int id_transaccion)
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<int>("SP_Registrar_Pedido @id_producto, @cantidad, @fecha_pedido, @id_transaccion",
+                    new SqlParameter("id_producto", id_producto),
+                    new SqlParameter("cantidad", cantidad),
+                    new SqlParameter("fecha_pedido", fecha_pedido),
+                    new SqlParameter("id_transaccion", id_transaccion)).FirstOrDefault();
+
+                return resultado;
+            }
+        }
+
+        //retorna false si no tiene cantidad suficiente
+        public int ValidarCantidadProducto(int id_producto)
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<int>("SP_Validar_cantidad_producto @id_producto",
+                    new SqlParameter("id_producto", id_producto)
+                ).FirstOrDefault();
+
+                return resultado;
+            }
+        }
     }
 }

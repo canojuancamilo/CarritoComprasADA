@@ -1,18 +1,36 @@
 ﻿@model List<CarritoCompra.Models.Procedure.SP_Retornar_Productos>
+@{
+    int idUsuario = (int)ViewBag.IdUsuario;
+
+    string mensaje = (string)TempData["MensajeLista"];
+}
+
+@if (!string.IsNullOrEmpty(mensaje))
+{
+    <div id="success-alert" class="alert alert-success alert-dismissible" style=" margin-top: 10px;">
+        @mensaje <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+}
+
+<input type="hidden" class="idUsuario" value="@idUsuario" />
 
 <div class="row">
     <div class="col-lg-3 col-md-3">
-        <div class="panel panel-warning">
-            <div class="panel-heading text-center">
+        <div class="panel panel-danger">
+            <div class="panel-heading text-center" style="background-color: #a94442; color:white;">
                 Productos por Comprar
             </div>
             <div class="panel-body">
                 <div class="listaPedidos">
-                    <div class="panel panel-default no-results">
+                    <div class="panel panel-default sinResultados">
                         <div class="panel-body">
                             Sin productos agregados.
                         </div>
                     </div>
+                </div>
+
+                <div class="text-center" style="margin-bottom:10px; margin-top:5px;">
+                    <button class="btn btn-danger guardarTransaccion" style="display:none;" data-loading-text="Guardando..."> Comprar</button>
                 </div>
             </div>
         </div>
@@ -30,7 +48,6 @@
             }
             else
             {
-
                 foreach (var producto in Model)
                 {
                     <div class="panel panel-info tarjeta">
@@ -70,6 +87,30 @@
                     </div>
                 }
             }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmacionModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="confirmacionModalLabel">Productos sin stock</h4>
+            </div>
+            <div class="modal-body">
+                <p>Estos productos no tiene el stock suficiente</p>
+                <div class="productosSinStock" style="margin-bottom:15px;">
+                    - <b>Play station 5:</b> cantidad disponible 5
+                    <br />
+                </div>
+                <p>
+                    ¿Desea continuar y comprar solo la cantidad disponible?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btnAceptarGuardar">Aceptar</button>
+            </div>
         </div>
     </div>
 </div>

@@ -11,6 +11,9 @@ namespace CarritoCompra.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id_pedido { get; set; }
 
+        public int id_transaccion { get; set; }
+        public Transaccion Transaccion { get; set; }
+
         public int id_producto { get; set; }
         public Producto Producto { get; set; }
 

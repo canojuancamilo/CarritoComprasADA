@@ -15,5 +15,6 @@ namespace CarritoCompra.Models.Procedure
         public int Cantidad_disponible { get; set; }
         public string Descripcion { get; set; }
         public string url { get; set; }
+        public int id_usuario { get; set; }
     }
 }

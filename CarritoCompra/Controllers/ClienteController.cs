@@ -28,8 +28,87 @@ namespace CarritoCompra.Controllers
         public ActionResult ListaProducto()
         {
             var productos = servicioProducto.ObtenerProductos();
+            SP_Registrar_Usuario usuarioEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
+
+            ViewBag.IdUsuario = usuarioEnCache.id_usuario;
 
             return PartialView("_ListaProductos", productos);
+        }
+
+
+        [HttpPost]
+        [Route("ValidarCantidadProductos")]
+        public ActionResult ValidarCantidadProductos(List<SP_Retornar_Productos> ListaProductos)
+        {
+            //Para eliminar los registros duplicados y dejar uno solo y seguir con las validaciones
+            var productosSinDuplicados = RetornarDatosSinrepetir(ListaProductos);
+
+            List<SP_Retornar_Productos> listProductosSinStock = new List<SP_Retornar_Productos>();
+
+            foreach (var producto in productosSinDuplicados)
+            {
+                var cantidadStock = servicioProducto.ValidarCantidadProducto(producto.id_producto);
+                if (cantidadStock < producto.Cantidad_disponible)
+                {
+                    listProductosSinStock.Add(new SP_Retornar_Productos()
+                    {
+                        Cantidad_disponible = cantidadStock,
+                        nombre = producto.nombre
+                    });
+                }
+            }
+
+            return Json(new { productosSinStock = (listProductosSinStock.Count > 0), lista = listProductosSinStock });
+        }
+
+
+        [HttpPost]
+        [Route("GuardarDatos")]
+        public ActionResult ActualizarTransaccion(List<SP_Retornar_Productos> ListaProductos)
+        {
+            //Para eliminar los registros duplicados y dejar uno solo y seguir con las validaciones
+            var productosSinDuplicados = RetornarDatosSinrepetir(ListaProductos);
+            int IdTransaccion = 0;
+
+            if (productosSinDuplicados.Count > 0) 
+            {
+                IdTransaccion= servicioProducto.IngresarTransaccion(productosSinDuplicados.FirstOrDefault().id_usuario, DateTime.Now);
+            }
+
+            foreach (var producto in productosSinDuplicados)
+            {
+                var cantidadStock = servicioProducto.ValidarCantidadProducto(producto.id_producto);
+
+                if (cantidadStock < producto.Cantidad_disponible)
+                {
+                    producto.Cantidad_disponible = cantidadStock;
+                }
+
+                if (producto.Cantidad_disponible != 0) 
+                {
+                    servicioProducto.IngresarPedido(producto.id_producto, producto.Cantidad_disponible, DateTime.Now, IdTransaccion);
+                }
+            }
+
+            var productos = servicioProducto.ObtenerProductos();
+            SP_Registrar_Usuario usuarioEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
+            ViewBag.IdUsuario = usuarioEnCache.id_usuario;
+            TempData["MensajeLista"] = "Se inserto correctamente la transaccion";
+
+            return PartialView("_ListaProductos", productos);
+        }
+
+        [NonAction]
+        public List<SP_Retornar_Productos> RetornarDatosSinrepetir(List<SP_Retornar_Productos> ListaProductos)
+        {
+            return ListaProductos.GroupBy(p => p.id_producto)
+                    .Select(g => new SP_Retornar_Productos
+                    {
+                        id_producto = g.Key,
+                        id_usuario = g.First().id_usuario,
+                        Cantidad_disponible = g.Sum(p => p.Cantidad_disponible),
+                        nombre = g.First().nombre
+                    }).ToList();
         }
     }
 }

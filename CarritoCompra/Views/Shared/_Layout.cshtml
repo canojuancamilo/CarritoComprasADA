@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
@@ -35,45 +35,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/main")    
     @RenderSection("scripts", required: false)
-    <script>
-        var onFailure = function (xhr)
-        {
-            $("body").html(xhr.responseText || xhr);
-        }
-
-        $(".ContenedorLayout").on("click", ".restar", function () {
-            let cantidadElement = $(this).siblings(".cantidad");
-            let cantidad = parseInt(cantidadElement.text());
-
-            if (cantidad > 1) {
-                cantidadElement.text(cantidad - 1);
-            }
-        });
-
-        $(".ContenedorLayout").on("click", ".sumar", function () {
-            let cantidadMaxima = $(this).data("cantidad-maxima");
-            let cantidadElement = $(this).siblings(".cantidad");
-            let cantidad = parseInt(cantidadElement.text());
-
-            if (cantidad < cantidadMaxima) {
-                cantidadElement.text(cantidad + 1);
-            }
-        });
-
-        $(".ContenedorLayout").on("click", ".btnAgregarCarrito", function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-
-            let $this = $(this);
-            $this.button('loading');
-
-            let id = $this.data("id");
-            let nombre = $this.data("nombre");
-            let cantidad = parseInt($this.siblings(".cantidad-container").find(".cantidad").text());
-            debugger;
-
-        });
-    </script>
 </body>
 </html>

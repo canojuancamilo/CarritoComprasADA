@@ -107,3 +107,4 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\Carrit
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel2.resources
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel3.resources
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel4.resources
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Debug\CarritoCompra.Migrations.UpdateModel5.resources

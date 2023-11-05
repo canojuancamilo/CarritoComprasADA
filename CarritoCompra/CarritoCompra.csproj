@@ -180,6 +180,10 @@
     <Compile Include="Migrations\202311041503380_UpdateModel4.designer.cs">
       <DependentUpon>202311041503380_UpdateModel4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311050523002_UpdateModel5.cs" />
+    <Compile Include="Migrations\202311050523002_UpdateModel5.designer.cs">
+      <DependentUpon>202311050523002_UpdateModel5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BDContextApplication.cs" />
     <Compile Include="Models\Enums\Rol.cs" />
@@ -223,6 +227,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -276,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311041503380_UpdateModel4.resx">
       <DependentUpon>202311041503380_UpdateModel4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311050523002_UpdateModel5.resx">
+      <DependentUpon>202311050523002_UpdateModel5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

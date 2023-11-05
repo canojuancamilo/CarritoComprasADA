@@ -76,3 +76,18 @@
 .removerProducto {
     cursor: pointer;
 }
+
+.cerrarSesion {
+    color: white;
+    background-color: #7f1313;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.cerrarSesion:hover {
+    color: white;
+    background-color: #7f1313;
+    padding: 10px;
+    border-radius: 16px;
+    text-decoration-line:none;
+}

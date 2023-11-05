@@ -99,5 +99,13 @@ namespace CarritoCompra.Controllers
             Response.StatusCode = 400;
             return View("RegistrarUsuario", model);
         }
+
+        [Route("CerrarSession")]
+        public ActionResult CerrarSesion()
+        {
+            HttpContext.Cache.Remove("Usuario");
+
+            return RedirectToAction("Index");
+        }
     }
 }

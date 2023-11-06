@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CarritoCompra.FiltrosPersonalizados
 {
-    public class UsuarioPublicCache : AuthorizeAttribute
+    public class UsuarioCliente : AuthorizeAttribute
     {
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
@@ -16,11 +16,7 @@ namespace CarritoCompra.FiltrosPersonalizados
 
             if (usuarioEnCache != null)
             {
-                if (usuarioEnCache.id_perfil == (int)Rol.Cliente)
-                {
-                    filterContext.Result = new RedirectResult("~/Cliente/Inicio");
-                }
-                else 
+                if (usuarioEnCache.id_perfil != (int)Rol.Cliente)
                 {
                     filterContext.Result = new RedirectResult("~/Administrador/Inicio");
                 }

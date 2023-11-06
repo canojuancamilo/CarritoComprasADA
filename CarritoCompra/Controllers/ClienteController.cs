@@ -18,6 +18,7 @@ namespace CarritoCompra.Controllers
         protected ServicioProducto servicioProducto = new ServicioProducto();
 
         [UsuarioCache]
+        [UsuarioCliente]
         [Route("Inicio")]
         public ActionResult Inicio()
         {

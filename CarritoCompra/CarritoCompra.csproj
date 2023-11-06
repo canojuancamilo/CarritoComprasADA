@@ -151,6 +151,8 @@
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="FiltrosPersonalizados\UsuarioCliente.cs" />
+    <Compile Include="FiltrosPersonalizados\UsuarioAdministrativo.cs" />
     <Compile Include="FiltrosPersonalizados\UsuarioPublicCache.cs" />
     <Compile Include="FiltrosPersonalizados\UsuarioCache.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,6 +222,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Img\login.jpg" />
+    <Content Include="ScriptSQL\SQLQueryADA.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

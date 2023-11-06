@@ -11,7 +11,6 @@ namespace CarritoCompra.Api
 {
     public class UsuarioComprasController : ApiController
     {
-        // GET api/<controller>
         public IHttpActionResult Get(string usuario, string contrasena)
         {
             if (string.IsNullOrEmpty(usuario))

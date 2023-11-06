@@ -13,7 +13,6 @@ namespace CarritoCompra.Api
 {
     public class ProductosController : ApiController
     {
-        // GET api/<controller>
         public IHttpActionResult Get(string usuario, string contrasena)
         {
             if (string.IsNullOrEmpty(usuario))
@@ -34,7 +33,6 @@ namespace CarritoCompra.Api
             return Ok(new {productos});
         }
 
-        // POST api/<controller>
         public HttpResponseMessage Post([FromBody] Api_Ingresar_Producto producto)
         {
             try
@@ -84,7 +82,6 @@ namespace CarritoCompra.Api
             }
         }
 
-        // PUT api/<controller>/5
         public HttpResponseMessage Put(int idProducto, [FromBody] Api_Ingresar_Producto producto)
         {
             try

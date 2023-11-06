@@ -140,9 +140,7 @@ let GuardarProductos = function (productos) {
         data: JSON.stringify(productos),
         contentType: "application/json",
         success: function (data) {
-            let item = $("#ListaProductosContenedor");
-            item.html(data);
-            $("#confirmacionModal").modal('hide');
+            location.reload();
         }
     });
 }

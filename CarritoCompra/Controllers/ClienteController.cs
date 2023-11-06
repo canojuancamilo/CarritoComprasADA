@@ -91,12 +91,9 @@ namespace CarritoCompra.Controllers
                 }
             }
 
-            var productos = servicioProducto.ObtenerProductos();
-            SP_Retornar_Usuario usuarioEnCache = (SP_Retornar_Usuario)HttpContext.Cache["Usuario"];
-            ViewBag.IdUsuario = usuarioEnCache.id_usuario;
             TempData["MensajeLista"] = "Se inserto correctamente la transaccion";
 
-            return PartialView("_ListaProductos", productos);
+            return Content(string.Empty);
         }
 
         [NonAction]

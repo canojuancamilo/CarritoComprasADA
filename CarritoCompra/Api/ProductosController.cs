@@ -69,11 +69,11 @@ namespace CarritoCompra.Api
 
                 if (consecutivo != 0)
                 {
-                    return Request.CreateResponse(HttpStatusCode.Created, $"El producto se registro correctamente: consecutivo '{consecutivo}'");
+                    return Request.CreateResponse(HttpStatusCode.Created, $"El producto se registró correctamente: consecutivo '{consecutivo}'");
                 }
                 else
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Se genero algun error al crear el producto.");
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, "Se generó algún error al crear el producto.");
                 }
             }
             catch (Exception ex)
@@ -119,7 +119,7 @@ namespace CarritoCompra.Api
 
                 servicioProducto.ActualizarProducto(idProducto, producto.id_categoria, producto.nombre, producto.descripcion, producto.cantidad_disponible, producto.url);
 
-                return Request.CreateResponse(HttpStatusCode.OK, "Se actualizo el producto correctamente.");
+                return Request.CreateResponse(HttpStatusCode.OK, "Se actualizó el producto correctamente.");
             }
             catch (Exception ex)
             {

@@ -29,7 +29,7 @@ namespace CarritoCompra.Controllers
         public ActionResult ListaProducto()
         {
             var productos = servicioProducto.ObtenerProductos();
-            SP_Registrar_Usuario usuarioEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
+            SP_Retornar_Usuario usuarioEnCache = (SP_Retornar_Usuario)HttpContext.Cache["Usuario"];
 
             ViewBag.IdUsuario = usuarioEnCache.id_usuario;
 
@@ -92,7 +92,7 @@ namespace CarritoCompra.Controllers
             }
 
             var productos = servicioProducto.ObtenerProductos();
-            SP_Registrar_Usuario usuarioEnCache = (SP_Registrar_Usuario)HttpContext.Cache["Usuario"];
+            SP_Retornar_Usuario usuarioEnCache = (SP_Retornar_Usuario)HttpContext.Cache["Usuario"];
             ViewBag.IdUsuario = usuarioEnCache.id_usuario;
             TempData["MensajeLista"] = "Se inserto correctamente la transaccion";
 

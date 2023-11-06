@@ -141,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Modelo\Api_Ingresar_Producto.cs" />
     <Compile Include="Api\UsuarioComprasController.cs" />
     <Compile Include="Api\ProductosController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -193,7 +194,7 @@
     <Compile Include="Models\Procedure\SP_Retornar_Pedidos.cs" />
     <Compile Include="Models\Procedure\SP_Retornar_Transacciones.cs" />
     <Compile Include="Models\Procedure\SP_Retornar_Productos.cs" />
-    <Compile Include="Models\Procedure\SP_Registrar_Usuario.cs" />
+    <Compile Include="Models\Procedure\SP_Retornar_Usuario.cs" />
     <Compile Include="Models\Transaccion.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\CategoriaProducto.cs" />

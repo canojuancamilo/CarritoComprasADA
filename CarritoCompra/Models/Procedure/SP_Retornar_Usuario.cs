@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CarritoCompra.Models.Procedure
 {
-    public class SP_Registrar_Usuario
+    public class SP_Retornar_Usuario
     {
         public int id_usuario { get; set; }
 
@@ -23,5 +23,7 @@ namespace CarritoCompra.Models.Procedure
         public string contrasena { get; set; }
 
         public int id_perfil { get; set; }
+
+        public string rol { get; set; }
     }
 }

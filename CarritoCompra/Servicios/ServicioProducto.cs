@@ -63,7 +63,7 @@ namespace CarritoCompra.Servicios
             using (var contexto = new BDContextApplication())
             {
                 var resultado = contexto.Database.SqlQuery<SP_Retornar_Transacciones>("SP_Retornar_Transacciones")
-                    .OrderByDescending(m=> m.fecha_transaccion) .ToList();
+                    .OrderByDescending(m => m.fecha_transaccion).ToList();
 
                 return resultado;
             }
@@ -77,6 +77,34 @@ namespace CarritoCompra.Servicios
                     new SqlParameter("id_transaccion", id_transaccion)).ToList();
 
                 return resultado;
+            }
+        }
+        public int IngresarProducto(int id_categoria, string nombre, string Descripcion, int Cantidad_disponible, string url)
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<int>("SP_Registrar_Producto @id_categoria, @nombre, @Descripcion, @Cantidad_disponible, @url",
+                    new SqlParameter("id_categoria", id_categoria),
+                    new SqlParameter("nombre", nombre),
+                    new SqlParameter("Descripcion", Descripcion),
+                    new SqlParameter("Cantidad_disponible", Cantidad_disponible),
+                    new SqlParameter("url", url)).FirstOrDefault();
+
+                return resultado;
+            }
+        }
+
+        public void ActualizarProducto(int id_produco, int id_categoria, string nombre, string Descripcion, int Cantidad_disponible, string url)
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.ExecuteSqlCommand("SP_Actualizar_Producto @id_produco, @id_categoria, @nombre, @Descripcion, @Cantidad_disponible, @url",
+                    new SqlParameter("id_produco", id_produco),
+                    new SqlParameter("id_categoria", id_categoria),
+                    new SqlParameter("nombre", nombre),
+                    new SqlParameter("Descripcion", Descripcion),
+                    new SqlParameter("Cantidad_disponible", Cantidad_disponible),
+                    new SqlParameter("url", url));
             }
         }
     }

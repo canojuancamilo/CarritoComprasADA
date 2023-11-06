@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarritoCompra.Models.Enums;
+using CarritoCompra.Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +12,44 @@ namespace CarritoCompra.Api
     public class UsuarioComprasController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get(string usuario, string contrasena)
         {
-            return new string[] { "value1", "value2" };
+            if (string.IsNullOrEmpty(usuario))
+                return BadRequest("El campo 'usuario' es obligatorio.");
+
+            if (string.IsNullOrEmpty(contrasena))
+                return BadRequest("El campo 'contrasena' es obligatorio.");
+
+            var mensajeError = ValidarUsuario(usuario, contrasena);
+
+            if (!string.IsNullOrEmpty(mensajeError))
+                return BadRequest(mensajeError);
+
+            ServicioUsuario servicioUsuario = new ServicioUsuario();
+
+            var usuarios = servicioUsuario.ObtenerUsuariosCliente();
+
+            return Ok(new { usuarios });
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        public string ValidarUsuario(string usuarioCliente, string contrasena)
         {
-            return "value";
-        }
+            ServicioUsuario servicioUsuario = new ServicioUsuario();
 
-        // POST api/<controller>
-        public void Post([FromBody] string value)
-        {
-        }
+            var usuario = servicioUsuario.ObtenerClienteUsuario(usuarioCliente);
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+            if (usuario == null)
+            {
+                return "Usuario o contraseña invalido.";
+            }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            if (!BCrypt.Net.BCrypt.Verify(contrasena, usuario.contrasena))
+                return "Usuario o contraseña invalido.";
+
+            if (usuario.id_perfil == (int)Rol.Cliente)
+                return "Acceso denegado.";
+
+            return "";
         }
     }
 }

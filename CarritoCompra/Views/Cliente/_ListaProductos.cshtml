@@ -36,19 +36,18 @@
         </div>
     </div>
     <div class="col-lg-9 col-md-9">
-
-        <div class="ContenedorProductos">
-            @if (Model == null || Model.Count <= 0)
-            {
-                <div class="panel panel-default no-results">
-                    <div class="panel-body">
-                        Sin productos agregados.
-                    </div>
+        @if (Model == null || Model.Count <= 0)
+        {
+            <div class="panel panel-default no-results">
+                <div class="panel-body">
+                    Sin productos disponibles.
                 </div>
-            }
-            else
-            {
-                foreach (var producto in Model)
+            </div>
+        }
+        else
+        {
+            <div class="ContenedorProductos">
+                @foreach (var producto in Model)
                 {
                     <div class="panel panel-info tarjeta">
                         <div class="panel-heading text-center">
@@ -86,8 +85,8 @@
                         </div>
                     </div>
                 }
-            }
-        </div>
+            </div>
+        }
     </div>
 </div>
 
@@ -100,8 +99,6 @@
             <div class="modal-body">
                 <p>Estos productos no tiene el stock suficiente</p>
                 <div class="productosSinStock" style="margin-bottom:15px;">
-                    - <b>Play station 5:</b> cantidad disponible 5
-                    <br />
                 </div>
                 <p>
                     ¿Desea continuar y comprar solo la cantidad disponible?

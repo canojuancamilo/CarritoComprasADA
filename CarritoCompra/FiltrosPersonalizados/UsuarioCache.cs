@@ -11,7 +11,7 @@ namespace CarritoCompra.FiltrosPersonalizados
     {
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            SP_Registrar_Usuario usuarioEnCache = (SP_Registrar_Usuario)filterContext.HttpContext.Cache["Usuario"];
+            SP_Retornar_Usuario usuarioEnCache = (SP_Retornar_Usuario)filterContext.HttpContext.Cache["Usuario"];
 
             if (usuarioEnCache == null)
             {

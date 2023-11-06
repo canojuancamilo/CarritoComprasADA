@@ -29,11 +29,11 @@ namespace CarritoCompra.Servicios
             }
         }
 
-        public SP_Registrar_Usuario ObtenerClienteUsuarioIdentificacion(string identificacion, string usuario)
+        public SP_Retornar_Usuario ObtenerClienteUsuarioIdentificacion(string identificacion, string usuario)
         {
             using (var contexto = new BDContextApplication())
             {
-                var resultado = contexto.Database.SqlQuery<SP_Registrar_Usuario>("SP_Obtener_cliente_identificacion_usuario @identificacion, @usuario",
+                var resultado = contexto.Database.SqlQuery<SP_Retornar_Usuario>("SP_Obtener_cliente_identificacion_usuario @identificacion, @usuario",
                     new SqlParameter("identificacion", identificacion),
                     new SqlParameter("usuario", usuario)
                 ).FirstOrDefault();
@@ -42,11 +42,11 @@ namespace CarritoCompra.Servicios
             }
         }
 
-        public SP_Registrar_Usuario ObtenerClienteUsuario(string usuario)
+        public SP_Retornar_Usuario ObtenerClienteUsuario(string usuario)
         {
             using (var contexto = new BDContextApplication())
             {
-                var resultado = contexto.Database.SqlQuery<SP_Registrar_Usuario>("SP_Validar_Login @usuario",
+                var resultado = contexto.Database.SqlQuery<SP_Retornar_Usuario>("SP_Validar_Login @usuario",
                     new SqlParameter("usuario", usuario)
                 ).FirstOrDefault();
 
@@ -54,6 +54,14 @@ namespace CarritoCompra.Servicios
             }
         }
 
-        
+        public List<SP_Retornar_Usuario> ObtenerUsuariosCliente()
+        {
+            using (var contexto = new BDContextApplication())
+            {
+                var resultado = contexto.Database.SqlQuery<SP_Retornar_Usuario>("SP_Retornar_Clientes").ToList();
+
+                return resultado;
+            }
+        }
     }
 }

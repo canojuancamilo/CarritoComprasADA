@@ -107,7 +107,6 @@ let validarCantidadDisponileProducto = function (productos) {
         data: JSON.stringify(productos),
         contentType: "application/json",
         success: function (data) {
-            debugger;
             if (data.productosSinStock) {
                 let plantilla = "- <b>{nombre}:</b> cantidad disponible {cantidad} <br/>"
                 let mensaje = "";
@@ -122,8 +121,9 @@ let validarCantidadDisponileProducto = function (productos) {
                 $(".guardarTransaccion").button('reset');
 
                 $(".ContenedorLayout").on("click", "#btnAceptarGuardar", function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
                     GuardarProductos(productos);
-                    $('#confirmacionModal').modal('hide');
                 });
             }
             else {
@@ -140,9 +140,9 @@ let GuardarProductos = function (productos) {
         data: JSON.stringify(productos),
         contentType: "application/json",
         success: function (data) {
-            debugger;
             let item = $("#ListaProductosContenedor");
             item.html(data);
+            $("#confirmacionModal").modal('hide');
         }
     });
 }

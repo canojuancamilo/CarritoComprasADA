@@ -1,5 +1,5 @@
 # CarritoComprasADA
-Prueba tecnica para puesto .net en ADA
+Prueba técnica para puesto .net en ADA
 
 El desarrollo se realizó bajo el modelo MVC, c#, .NET frameWork 4.8, Entity FrameWork Visual Studio 2019.
 

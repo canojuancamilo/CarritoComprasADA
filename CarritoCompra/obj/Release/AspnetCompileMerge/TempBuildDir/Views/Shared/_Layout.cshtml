@@ -11,9 +11,9 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header" style="width:100%;">
                 @Html.ActionLink("Carrito compra Ada", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <span class = "navbar-brand navbar-right visible-sm visible-xs" style="margin-left: 40px;">
+                <span class = "navbar-brand navbar-right visible-sm visible-xs">
                     <a class="cerrarSesion  " style=" color: white; background-color: #7f1313; padding: 7px; border-radius: 10px; font-size: 16px;" href="@Url.Action("CerrarSesion", "Home")">Cerrar sesión</a>
                 </span>
             </div> 

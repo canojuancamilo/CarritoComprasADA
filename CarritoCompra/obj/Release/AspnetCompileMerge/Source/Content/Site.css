@@ -1,5 +1,4 @@
 ﻿body {
-
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,7 +21,7 @@
 
 .ContenedorProductos {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
     gap: 20px;
 }
 
@@ -35,6 +34,7 @@
         height: 100%;
         object-fit: cover;
         max-height: 200px;
+        min-height: 200px;
         margin-bottom: 20px;
     }
 
@@ -48,11 +48,15 @@
         top: 70px;
     }
 
-.cantidad-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end
-}
+    .tarjeta .descripcionProducto{
+        height:85px;
+    }
+
+    .cantidad-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end
+    }
 
 .accion {
     font-size: 18px;
@@ -84,10 +88,10 @@
     border-radius: 16px;
 }
 
-.cerrarSesion:hover {
-    color: white;
-    background-color: #7f1313;
-    padding: 10px;
-    border-radius: 16px;
-    text-decoration-line:none;
-}
+    .cerrarSesion:hover {
+        color: white;
+        background-color: #7f1313;
+        padding: 10px;
+        border-radius: 16px;
+        text-decoration-line: none;
+    }

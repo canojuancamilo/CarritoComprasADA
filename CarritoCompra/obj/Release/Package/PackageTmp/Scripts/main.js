@@ -23,7 +23,7 @@ $(".ContenedorLayout").on("click", ".sumar", function () {
     }
 });
 
-$(".ContenedorLayout").on("click", ".btnAgregarCarrito", function (e) {
+$(".ContenedorLayout").on("click touchstart", ".btnAgregarCarrito", function (e) {
     contador += 1;
     e.stopPropagation();
     e.preventDefault();
@@ -41,13 +41,13 @@ $(".ContenedorLayout").on("click", ".btnAgregarCarrito", function (e) {
     let plantillaCarrito = '<div class="panel panel-default productoCarrito{posicion}">' +
         '    <div class="panel-body">' +
         '        <div class="row">' +
-        '            <div class="col-lg-8 col-md-8">' +
+        '            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">' +
         '                {producto}' +
         '            </div>' +
-        '            <div class="col-lg-2 col-md-2">' +
+        '            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">' +
         '                {cantidad}' +
         '            </div>' +
-        '            <div class="col-lg-2 col-md-2">' +
+        '            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">' +
         '                <span class="removerProducto" data-posicion="{posicion}"> <i class="glyphicon glyphicon-remove" style="color:Red;"></i></span>' +
         '            </div>' +
         '        </div>' +
@@ -70,7 +70,7 @@ $(".ContenedorLayout").on("click", ".btnAgregarCarrito", function (e) {
     $(".guardarTransaccion").show();
 });
 
-$(".ContenedorLayout").on("click", ".guardarTransaccion", function (e) {
+$(".ContenedorLayout").on("click touchstart", ".guardarTransaccion", function (e) {
     e.stopPropagation();
     e.preventDefault();
 
@@ -120,7 +120,7 @@ let validarCantidadDisponileProducto = function (productos) {
                 $("#confirmacionModal").modal('show');
                 $(".guardarTransaccion").button('reset');
 
-                $(".ContenedorLayout").on("click", "#btnAceptarGuardar", function (e) {
+                $(".ContenedorLayout").on("click touchstart", "#btnAceptarGuardar", function (e) {
                     e.stopPropagation();
                     e.preventDefault();
                     GuardarProductos(productos);
@@ -145,7 +145,7 @@ let GuardarProductos = function (productos) {
     });
 }
 
-$(".ContenedorLayout").on("click", ".removerProducto", function () {
+$(".ContenedorLayout").on("click touchstart", ".removerProducto", function () {
     let clase = ".productoCarrito" + $(this).data("posicion");
     $(clase).remove();
 

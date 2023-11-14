@@ -11,7 +11,7 @@
 }
 else
 {
-    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; gap: 20px; ">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; ">
         @foreach (var producto in Model)
         {
             <div class="panel panel-default sinResultados">

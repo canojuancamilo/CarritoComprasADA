@@ -12,14 +12,12 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 @Html.ActionLink("Carrito compra Ada", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <span class = "navbar-brand navbar-right visible-sm visible-xs" style="margin-left: 40px;">
+                    <a class="cerrarSesion  " style=" color: white; background-color: #7f1313; padding: 7px; border-radius: 10px; font-size: 16px;" href="@Url.Action("CerrarSesion", "Home")">Cerrar sesión</a>
+                </span>
             </div> 
-            <div class="nav navbar-nav navbar-right" style="margin-top: 15px;">
+            <div class="nav navbar-nav navbar-right visible-lg visible-md" style="margin-top: 15px;">
                 <a class="cerrarSesion" href="@Url.Action("CerrarSesion", "Home")">Cerrar sesión</a>
             </div>
         </div>

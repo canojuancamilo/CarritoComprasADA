@@ -1,7 +1,7 @@
 # CarritoComprasADA
-Prueba tecnica para puesto .net en ADA
+Prueba técnica para puesto .net en ADA
 
-El desarrollo se realizo bajo el modelo MVC, c#, .NET frameWork 4.8, Entity FrameWork visual studio 2019.
+El desarrollo se realizó bajo el modelo MVC, c#, .NET frameWork 4.8, Entity FrameWork Visual Studio 2019.
 
 1. para probar localmente el primer punto se debe:
 
@@ -13,19 +13,19 @@ local de su preferencia
 
 - Ejecuta los comandos de migraciones: desde la consola de Administrador de Paquetes ejecuta el Add-Migration y Update-Database
 
-- Ejecutar script SQL: El script tiene el nombre de 'SQLQueryADA' el cual esta en el proyecto en una carpeta llamada ScriptSQL
+- Ejecutar script SQL: El script tiene el nombre de 'SQLQueryADA' el cual está en el proyecto en una carpeta llamada ScriptSQL
 
-Con el scrip anterior registramos rol, categorias, 4 productos y un administrado con clave encriptada.
+Con el script anterior registramos rol, categorías, 4 productos y un administrado con clave encriptada.
 
-las credenciales del admnistrativo son:
+Las credenciales del administrador son:
 Usuario: administrador
 Contraseña: 123
 
-Para el login utilice BCrypt para encriptar la contraseña, tambien se guardan las credenciales del usaurio en cache y se utilizan filtros personalizados para evitar el ingreso a lugares que no pertenecen de su rol, se utiliza enums para el rol por lo cual se recomienda mantener los identificadores en BD de los roles para el correcto funcionamiento, para el resto del desarrollo  en aplicación se utilizo razor, JavaScript, JQuery, boostrap 3.4.
+Para el login utilicé BCrypt para encriptar la contraseña, también se guardan las credenciales del usuario en caché y se utilizan filtros personalizados para evitar el ingreso a lugares que no pertenecen de su rol, se utiliza Enums para el rol por lo cual se recomienda mantener los identificadores en BD de los roles para el correcto funcionamiento, para el resto del desarrollo  en aplicación se utilizó razor, JavaScript, JQuery, boostrap 3.4.
 
-Para la BD se utilizo el entity para crear las tablas y se trabajo con procedimientos almacenados.
+Para la BD se utilizó el entity para crear las tablas y se trabajó con procedimientos almacenados.
 
-2. para probar este punto y facilitar un poco las pruebas les comparto el CURL de las apis creadas 
+2. para probar este punto y facilitar un poco las pruebas les comparto el CURL de las Apis creadas  
 
 Obtener Productos
 curl --location 'https://localhost:44388/api/Productos?usuario=Administrador&null=null&contrasena=123'

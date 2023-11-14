@@ -6,9 +6,8 @@ using CarritoCompra.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Caching;
 using System.Web.Mvc;
+using System.Web;
 
 namespace CarritoCompra.Controllers
 {
@@ -40,10 +39,9 @@ namespace CarritoCompra.Controllers
                 {
                     if (model.VerificarContrasena(usuario.contrasena))
                     {
-                        // Guarda los datos en la caché con una duración de 15 minutos (900 segundos)
-                        HttpContext.Cache.Insert("Usuario", usuario, null, DateTime.Now.AddSeconds(900), Cache.NoSlidingExpiration);
+                        System.Web.HttpContext.Current.Session["Usuario"] = usuario;
 
-                        if(usuario.id_perfil == (int)Rol.Cliente)
+                        if (usuario.id_perfil == (int)Rol.Cliente)
                         return Json(new { success = true, redirectTo = Url.Action("Inicio", "Cliente") });
 
                         return Json(new { success = true, redirectTo = Url.Action("Inicio", "Administrador") });
@@ -103,7 +101,7 @@ namespace CarritoCompra.Controllers
         [Route("CerrarSession")]
         public ActionResult CerrarSesion()
         {
-            HttpContext.Cache.Remove("Usuario");
+            System.Web.HttpContext.Current.Session.Remove("Usuario");
 
             return RedirectToAction("Index");
         }

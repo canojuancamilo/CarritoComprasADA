@@ -13,12 +13,9 @@
         <div class="container">
             <div class="navbar-header" style="width:100%;">
                 @Html.ActionLink("Carrito compra Ada", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <span class = "navbar-brand navbar-right visible-sm visible-xs">
-                    <a class="cerrarSesion  " style=" color: white; background-color: #7f1313; padding: 7px; border-radius: 10px; font-size: 16px;" href="@Url.Action("CerrarSesion", "Home")">Cerrar sesión</a>
+                <span class="navbar-brand navbar-right" style=" float: right !important;">
+                    <a class="cerrarSesion" style="color: white; background-color: #7f1313; padding: 7px; border-radius: 10px; font-size: 16px;" href="@Url.Action("CerrarSesion", "Home")">Cerrar sesión</a>
                 </span>
-            </div> 
-            <div class="nav navbar-nav navbar-right visible-lg visible-md" style="margin-top: 15px;">
-                <a class="cerrarSesion" href="@Url.Action("CerrarSesion", "Home")">Cerrar sesión</a>
             </div>
         </div>
     </div>
@@ -29,7 +26,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/main")    
+    @Scripts.Render("~/bundles/main")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -30,7 +30,7 @@ namespace CarritoCompra.Controllers
         public ActionResult ListaProducto()
         {
             var productos = servicioProducto.ObtenerProductos();
-            SP_Retornar_Usuario usuarioEnCache = (SP_Retornar_Usuario)HttpContext.Cache["Usuario"];
+            SP_Retornar_Usuario usuarioEnCache = (SP_Retornar_Usuario)System.Web.HttpContext.Current.Session["Usuario"];
 
             ViewBag.IdUsuario = usuarioEnCache.id_usuario;
 

@@ -1,0 +1,62 @@
+﻿@model CarritoCompra.Models.Usuario
+@{
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+    ViewBag.Title = "Login";
+    string mensaje = (string)TempData["Mensaje"];
+}
+
+@if (!string.IsNullOrEmpty(mensaje))
+{
+    <div id="success-alert" class="alert alert-success alert-dismissible" style=" margin-top: 10px;">
+        @mensaje <button type="button" class="close" data-dismiss="alert" style="right: -5px;">&times;</button>
+    </div>
+}
+
+<div class="row" style=" margin-right: 0px; margin-left: 0px; ">
+    <div class="col-lg-8 col-md-8 text-center">
+        <img src="~/Img/login.jpg" style="object-fit: contain; margin-top: 40px;" />
+    </div>
+    <div class="col-of col-lg-4 col-md-4">
+        <div class="panel panel-info" style="margin-top: 140px;">
+            <div class="panel-heading text-center" style="font-weight:600;">Carrito de compras ada</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    @using (Ajax.BeginForm("ValidarUsuario", new AjaxOptions
+                    {
+                        HttpMethod = "Post",
+                        OnBegin = "$(this).find('#submit-btn').button('loading');",
+                        OnFailure = "onFailure",
+                        OnSuccess = "onSucces"
+                    }))
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.usuario, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.usuario, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.usuario, null, new { @class = "help-block text-danger", @style = "color: #a94442;" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.contrasena, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.contrasena, new { @class = "form-control", type = "password" })
+                            @Html.ValidationMessageFor(m => m.contrasena, null, new { @class = "help-block", @style = "color: #a94442;" })
+                        </div>
+                        <div class="text-center">
+                            <input id="submit-btn" type="submit" class="btn btn-primary" data-loading-text="Validando..." style="margin: auto; width: 90%; border-radius: 25px; padding: 15px; background-color: #398BF7; font-weight: 600; font-size: 20px; margin-top:15px;" value="Ingresar" />
+                        </div>
+
+                        <p style="margin-top: 10px;" class="text-center"><a href="@Url.Action("RegistrarUsuario")" style="font-weight: 600; color: #5D95E0; text-decoration-line: underline; ">¿No tienes una cuenta? Registrate </a></p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var onSucces = function (data) {
+            if (data.success) {
+                window.location.href = data.redirectTo;
+            }
+        };
+    </script>
+} 

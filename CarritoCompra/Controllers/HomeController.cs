@@ -57,7 +57,7 @@ namespace CarritoCompra.Controllers
                 }
             }
 
-            Response.StatusCode = 400;
+
             return View("Index", model);
         }
 
@@ -97,7 +97,6 @@ namespace CarritoCompra.Controllers
                 }
             }
 
-            Response.StatusCode = 400;
             return View("RegistrarUsuario", model);
         }
 

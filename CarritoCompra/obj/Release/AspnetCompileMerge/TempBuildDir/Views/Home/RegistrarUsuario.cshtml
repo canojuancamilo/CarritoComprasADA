@@ -1,0 +1,73 @@
+﻿@model CarritoCompra.Models.Usuario
+@{
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+    ViewBag.Title = "Registrar";
+}
+
+@using (Ajax.BeginForm("ActualizarUsuario", null, new AjaxOptions
+    {
+        HttpMethod = "POST",
+        OnBegin = "$(this).find('#submit-btn').button('loading');",
+        OnSuccess = "onSucces",
+        OnFailure = "onFailure"
+}, null))
+{
+
+    <div class="row" style=" margin-top:30px; margin-right: 0px; margin-left: 0px; ">
+        <div class="col-lg-offset-4 col-lg-4 col-md-4">
+            <div class="panel panel-info" style="margin-top: 0px;">
+                <div class="panel-heading text-center" style="font-weight:600;">Registrar usuario</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.nombre, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.nombre, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.nombre, null, new { @class = "help-block text-danger", @style = "color: #a94442;" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.direccion, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.direccion, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.direccion, null, new { @class = "help-block text-danger", @style = "color: #a94442;" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.telefono, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.telefono, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.telefono, null, new { @class = "help-block text-danger", @style = "color: #a94442;" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.identificacion, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.identificacion, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.identificacion, null, new { @class = "help-block text-danger", @style = "color: #a94442;" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.usuario, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.usuario, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.usuario, null, new { @class = "help-block text-danger", @style = "color: #a94442;" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.contrasena, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.contrasena, new { @class = "form-control", type = "password" })
+                            @Html.ValidationMessageFor(m => m.contrasena, null, new { @class = "help-block", @style = "color: #a94442;" })
+                        </div>
+                        <div class="text-center">
+                            <input id="submit-btn" type="submit" class="btn btn-primary" data-loading-text="Cargando..." style="margin: auto; width: 90%; border-radius: 25px; padding: 15px; background-color: #398BF7; font-weight: 600; font-size: 20px; margin-top:15px;" value="Registrar" />
+                        </div>
+
+                        <p style="margin-top: 10px;" class="text-center"><a href="@Url.Action("Index")" style="font-weight: 600; color: #5D95E0; text-decoration-line: underline; ">Iniciar sesión </a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script>
+        var onSucces = function (data) {
+            if (data.success) {
+                window.location.href = data.redirectTo;
+            }
+        };
+    </script>
+} 

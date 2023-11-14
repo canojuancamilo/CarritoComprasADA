@@ -1,0 +1,27 @@
+﻿@model List<CarritoCompra.Models.Procedure.SP_Retornar_Transacciones>
+
+@if (Model == null || Model.Count <= 0)
+{
+    <div class="panel panel-default sinResultados">
+        <div class="panel-body">
+            Sin Transacciones.
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center" style="margin-bottom: 20px; color: #b71851;">
+        <h1>Transacciones</h1>
+    </div>
+    foreach (var transa in Model)
+    {
+        <div class="panel panel-info sinResultados">
+            <div class="panel-heading text-center">
+                <b>@transa.nombre - @transa.fecha_transaccion.ToString("dd/MM/yyyy - hh:mm tt")</b>
+            </div>
+            <div class="panel-body">
+                @Html.Action("ListaPedidos", "Administrador", new { transaccion = transa.id_transaccion })
+            </div>
+        </div>
+    }
+}

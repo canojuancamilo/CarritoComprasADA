@@ -107,3 +107,4 @@ C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Release\Carr
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Release\CarritoCompra.csproj.CopyComplete
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Release\CarritoCompra.dll
 C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Release\CarritoCompra.pdb
+C:\Users\canoj\OneDrive\Desktop\CarritoComprasADA\CarritoCompra\obj\Release\CarritoCompra.csproj.AssemblyReference.cache

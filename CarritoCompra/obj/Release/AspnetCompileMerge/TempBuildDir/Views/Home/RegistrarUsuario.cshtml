@@ -68,6 +68,10 @@
             if (data.success) {
                 window.location.href = data.redirectTo;
             }
+            else
+            {
+                $("body").html(data.responseText || data);
+            }
         };
     </script>
 } 
